@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	    <title>Portfolio: Florent WASSEN</title>
+	    <meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="../../css/bootstrap.min.css">
+		<link rel="stylesheet" href="../../css/main.css">
+		<link rel="stylesheet" href="../../css/snow.css">
+    </head>
+    <body>
+		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-collapse" role="button">
+					<span class="sr-only">Toggle Navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand">Portfolio: Florent WASSEN</a>
+				</div>
+				<div class="collapse navbar-collapse">
+					<ul class="nav navbar-nav navbar-right js-nav">
+						<li><a href="../../">Accueil</a></li>
+						<li class="activelink"><a>BlocklyBlender</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		
+		<section id="null" style="padding:25px;"></section>
+		
+		<section class="sec-about">
+			<div class="container">
+				<div class="panel-group">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<a data-toggle="collapse" href="#context">Le contexte</a>
+							</h4>
+						</div>
+						<div id="context" class="panel-collapse collapse in">
+							<div class="panel-body">
+								Lors de ma scolarité j'ai pu faire du python sur Blender et nous avons été amenés à devoir réaliser un projet sur Blender 2.77.<br/>
+								Dans mon cas j'ai combiner Blockly de google qui permet de programmer comme un puzzle que j'ai intégrée dans ma page web.<br/>
+								Du côté python j'ai dû faire une connexion en socket pour communiquer avec la page web, mais durant l'écoute du port le thread de Blender ce bloque.<br/>
+								Pour résoudre ce problème j'ai tenté de faire du multithreading mais impossible de retourner dans le bon contexte de Blender.<br/>
+								J'ai donc utilisé un timer qui va écouter le port un certain temps puis le couper.
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="panel-group">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<a data-toggle="collapse" href="#lien">Lien</a>
+							</h4>
+						</div>
+						<div id="lien" class="panel-collapse collapse in">
+							<div class="panel-body">
+								<a href="https://drive.google.com/drive/folders/1I6g7cEQd5HRFnw-LpmdTk3Dln-zomo8p?usp=sharing">Dossier des fichiers de code source</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="panel-group">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<a data-toggle="collapse" href="#video">Vidéo</a>
+							</h4>
+						</div>
+						<div id="video" class="panel-collapse collapse in">
+							<div class="panel-body">
+								<center>
+									<iframe width="560" height="315" src="https://www.youtube.com/embed/5WhFDHb2b8E" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+								</center>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+		</section>
+		
+		<script src="../../js/jquery-3.5.1.min.js"></script>
+		<script src="../../js/bootstrap.min.js"></script>
+    </body>
+</html>

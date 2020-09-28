@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+	    <title>Portfolio: Florent WASSEN</title>
+	    <meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="../../css/bootstrap.min.css">
+		<link rel="stylesheet" href="../../css/main.css">
+		<link rel="stylesheet" href="../../css/snow.css">
+    </head>
+    <body>
+		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-collapse" role="button">
+					<span class="sr-only">Toggle Navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand">Portfolio: Florent WASSEN</a>
+				</div>
+				<div class="collapse navbar-collapse">
+					<ul class="nav navbar-nav navbar-right js-nav">
+						<li><a href="../../">Accueil</a></li>
+						<li class="activelink"><a>WAOLab</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		
+		<section id="null" style="padding:25px;"></section>
+		
+		<!-- l'entreprise >-->
+		<section class="sec-about">
+			<div class="container">
+				
+				<div class="panel-group">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+						  <h4 class="panel-title">
+							<a data-toggle="collapse" href="#context">Contexte</a>
+						  </h4>
+						</div>
+						<div id="context" class="panel-collapse collapse in">
+							<div class="panel-body">
+								J'ai travaillé chez WAOLab pour valider mon master 1, c'est une entreprise de numérisation 3D et de création de contenus 3D interactifs dans l'art et la culture (XR(VR, AR, MR)).<br/>
+								J'ai été amené à travailler sur un showroom en VR.
+								Une application Android pour visionner les modèles 3D d'un corps humain et ces organes pour une intervention le lendemain.
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="panel-group">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+						  <h4 class="panel-title">
+							<a data-toggle="collapse" href="#showroom">Showroom VR</a>
+						  </h4>
+						</div>
+						<div id="showroom" class="panel-collapse collapse in">
+							<div class="panel-body">
+								Le showroom était déjà commencer avant mon arrivé, j'ai dû le reprendre tout seul.
+								Pour obtenir plus de possibilité avec le HTC Vive nous avons mis à jour SteamVR mais celui-ci ayant une version majeure différente, j'ai dû changer toute la partie inputs existante du projet.
+								J'ai pu crée un système de menu VR, modifier du code trouvé sur Github pour avoir un clavier virtuel compatible avec SteamVR.
+								J'ai pu reprendre une palette de couleur qui permet de changer la couleur des murs pour la permettre de changer la couleur d'une pièce entière.
+								Un projet à part avait été réalisés pour déplacer des objets au sol, plafond et murs, j'ai donc dû l'intégrer au projet en faisant des retouches.
+								Changement de skin des objets.
+								Changement de matériaux de sol.
+								Menu de création d'objets.
+								Changer la skybox depuis le menu VR.
+								Placer des murs à la main en VR puis générer les sols et plafond en sélectionnant les murs.
+								Crée un système de sauvegarde et chargement en JSON.
+								Corrigés divers bugs.
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="panel-group">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+						  <h4 class="panel-title">
+							<a data-toggle="collapse" href="#selection">Séléction sur un mesh</a>
+						  </h4>
+						</div>
+						<div id="selection" class="panel-collapse collapse in">
+							<div class="panel-body">
+								J'ai été amené à travailler sur Unity 3D afin de faire de la sélection sur un mesh 3D.<br/>
+								J’ai rencontré des difficultés avec des sélections qui partaient dans tous les sens, car je n’avais pas le même IndexFormat sur les meshes donc c’est important de mettre un IndexFormat supérieur ou égal à celui du mesh.<br/>
+								Pour simplifier les explications je vais nommer certains mesh :<br/>
+								Mesh cible : le mesh sur lequel je sélectionne.<br/>
+								Mesh de sélection : le mesh crée en surbrillance montrant la sélection.<br/>
+								<br/>
+								Sélection Libre:<br/>
+								J’ai d’abord travaillé sur la sélection libre en 2D, l’utilisateur dessine un polygone pour la sélection que je dessine grâce au lineRenderer d’Unity, puis je simplifie le nombre de points dedans.<br/>
+								Ma première approche fut de passer par les opérations booléennes à l’aide d’un plugin, pour cela j’ai créé un mesh 3D avec comme point les points utilisés par le lineRenderer, puis je refais la même forme plus en profondeur, puis je les relis.<br/>
+								Cela me donne une sorte de cylindre déformé à partir de notre dessin à la souris.<br/>
+								Puis, je lance l’opération booléen Intersecte afin de créer un mesh de sélection en surbrillance montrant l’intersection par-dessus le mesh cible afin de montrer la sélection malheureusement le résultat n’était pas toujours celui attendu.<br/>
+								J’ai donc voulu le faire d’une autre façon en créant ma propre solution.<br/>
+								Donc, je repars de mon lineRenderer, mais cette fois-ci je fais un mesh de la forme du lineRenderer sans faire de cylindre.<br/>
+								J’ai fait une fonction Intersecte qui pour tous les triangles dans le mesh cible pour tous les vertices du triangle envoie un raycast du vertice vers l’arrière (donc vers nous) et si tous les raycasts ont touché notre mesh, j’ajoute le triangle au mesh de sélection qui sera créé.<br/>
+								Ensuite, j’ai voulu me passer de la partie physique j’ai donc changé le code pour faire une fonction Intersecte qui pour tous les triangles dans le mesh cible pour tous les vertices du triangle vérifie si le vertice converti en 2D est dans le polygone créé à partir des points du lineRenderer.<br/>
+								<br/>
+								Sélection 2D:<br/>
+								Je dessine un cercle qui suit la souris avec la possibilité de changer le rayon du cercle. La fonction Intersecte qui pour tous les triangles dans le mesh cible pour tous les vertices du triangle vérifie si le vertice passé en 2D est à une distance plus petite ou égale au rayon par rapport au centre du cercle j’ajoute le triangle au mesh de sélection qui sera créé.<br/>
+								Mais, si on veut peindre le mesh cible pour le sélectionner c’est trop lent, pour cela je crée un quad devant l’écran avec une texture qui se fait peindre quand on maintient le clic gauche puis quand on relâche j’utilise la fonction d’intersection qui vérifie si le vertice du triangle en 2D qui correspond aux coordonnées du pixel qui couvre le point dans la texture à un emplacement coloré.<br/>
+								<br/>
+								Sélection 3D:<br/>
+								Je mets une sphère qui suit la souris et qui se place sur le mesh à l’aide d’un raycast, cette fois-ci l’intersection est calculée de la même façon que la sélection 2D, sauf qu’on utilise le centre de la sphère ainsi que le vertice en 3D.<br/>
+								<br/>
+								Combiner:<br/>
+								Pour combiner deux mesh (que j’utilise pour ajouter une sélection à l’ancienne sélection).<br/>
+								Au départ, je suis parti pour faire une fonction qui fait pour tous les triangles de la nouvelle sélection pour tous les vertices du triangle vérifie qu'elle ne figure pas déjà dans la sélection précédente.<br/>
+								Mais cela était beaucoup trop lent, donc pour cela j’ai utilisé des HashSet de string contenant les triangles sous forme de string concaténé afin de savoir plus rapidement si un triangle est déjà sélectionné ou non, du fait que l’on ne parcourt plus de liste.<br/>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+		</section>
+		
+		<script src="../../js/jquery-3.5.1.min.js"></script>
+		<script src="../../js/bootstrap.min.js"></script>
+    </body>
+</html>

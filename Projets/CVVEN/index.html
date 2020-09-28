@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	    <title>Portfolio: Florent WASSEN</title>
+	    <meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="../../css/bootstrap.min.css">
+		<link rel="stylesheet" href="../../css/main.css">
+		<link rel="stylesheet" href="../../css/snow.css">
+    </head>
+    <body>
+		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-collapse" role="button">
+					<span class="sr-only">Toggle Navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand">Portfolio: Florent WASSEN</a>
+				</div>
+				<div class="collapse navbar-collapse">
+					<ul class="nav navbar-nav navbar-right js-nav">
+						<li><a href="../../">Accueil</a></li>
+						<li class="activelink"><a>CVVEN</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		
+		<section id="null" style="padding:25px;"></section>
+		
+		<!-- l'entreprise >-->
+		<section class="sec-about">
+			<div class="container">
+				<div class="panel-group">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" href="#context">Le contexte CVVEN</a>
+						</h4>
+						</div>
+						<div id="context" class="panel-collapse collapse in">
+							<div class="panel-body">
+								Le CVVEN (Comité pour les Villages de Vacances de l'Education Nationale) est une association
+								(fictive) régie par la loi de 1901, et qui joue le rôle de comité d'entreprise auprès de tous les agents
+								de l'Education Nationale. <br/>
+								Le CVVEN dispose de 4 villages de vacances répartis dans toute la France. Pendant les
+								congés scolaires, les villages peuvent être réservés par les agents adhérents et leur famille pour des
+								séjours d'une ou plusieurs semaines. Ces séjours de vacances sont subventionnés en fonction du
+								quotient   familial.<br/>
+								En   dehors   des   période   de   vacances   scolaires,   les   villages   peuvent   permettre   d'organiser   des
+								colloques, congrès, séminaires, ou accueillir des groupes. Ils sont tous équipés de salles de réunions,
+								de matériel informatique, l'hébergement et la restauration pouvant se faire sur place. La réservation
+								est alors ouverte à toute personne sur simple demande.
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="panel-group">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" href="#demo">Démonstration</a>
+						</h4>
+						</div>
+						<div id="demo" class="panel-collapse collapse in">
+							<div class="panel-body">
+								<a href="http://cvvenlmwl.alwaysdata.net/"/>Lien Démo</a><br/>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="panel-group">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<a data-toggle="collapse" href="#bdd">Base de données</a>
+							</h4>
+						</div>
+						<div id="bdd" class="panel-collapse collapse in">
+							<div class="panel-body">
+								Nous avons utilisé PostgresSQL.
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="panel-group">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<a data-toggle="collapse" href="#inscription">Page d'Inscription</a>
+							</h4>
+						</div>
+						<div id="inscription" class="panel-collapse collapse in">
+							<div class="panel-body">
+							  <div class="clearfix content-heading">
+								  <img class="pull-left" src="images/CVVEN Inscription.png"  height="800" width="400"/>
+								  J'ai modifié la fonction is_unique située dans system/libraries/Form_validation.php
+								afin de la faire fonctionner avec les schémas de cette façon is_unique[cvven.utilisateur.email]
+								on coupe au dernier point au lieux du premier point.<br/>
+								J'ai ajouté les 3 premières lignes et retiré le sscanf.<br/><br/>
+								La fonction:</br>
+								public function is_unique($str, $field)</br>
+								{</br>
+								&nbsp 	$pos = strripos($field, '.');</br>
+								&nbsp 	$table = substr($field, 0, $pos);</br>
+								&nbsp 	$field = substr($field, $pos+1);</br>
+								&nbsp 	//sscanf($field, '%[^.].%[^.]', $table, $field);</br>
+								&nbsp 	return isset($this->CI->db) ? </br>
+								&nbsp   ($this->CI->db->limit(1)->get_where($table, array($field => $str))->num_rows() === 0) : FALSE;</br>
+								}
+							  </div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="panel-group">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<a data-toggle="collapse" href="#accueil">Page d'Accueil</a>
+							</h4>
+						</div>
+						<div id="accueil" class="panel-collapse collapse in">
+							<div class="panel-body">
+								<img src="images/CVVEN Accueil.png" height="400" width="800"/><br/>
+								La personne connéctée peut : <br/>
+								- Modifier son mot de passe<br/>
+								- Consulter ses réservations<br/>
+								- Réserver<br/>
+								- Voir le Calendrier<br/>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="panel-group">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+							<a data-toggle="collapse" href="#listeres">Liste Réservation</a>
+							</h4>
+						</div>
+						<div id="listeres" class="panel-collapse collapse in">
+							<div class="panel-body">
+								<img src="images/CVVEN Liste Reserv.png" height="400" width="900"/><br/>
+								Etant connecté avec un compte administrateur je peux voir les réservations de tout le monde et les valider.
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="panel-group">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<a data-toggle="collapse" href="#calendrier">Calendrier</a>
+							</h4>
+						</div>
+						<div id="calendrier" class="panel-collapse collapse in">
+							<div class="panel-body">
+								<img src="images/CVVEN Calendrier.png" height="400" width="800"/>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	
+		<script src="../../js/jquery-3.5.1.min.js"></script>
+		<script src="../../js/bootstrap.min.js"></script>
+    </body>
+</html>

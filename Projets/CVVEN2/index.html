@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	    <title>Portfolio: Florent WASSEN</title>
+	    <meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="../../css/bootstrap.min.css">
+		<link rel="stylesheet" href="../../css/main.css">
+		<link rel="stylesheet" href="../../css/snow.css">
+    </head>
+    <body>
+		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-collapse" role="button">
+					<span class="sr-only">Toggle Navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand">Portfolio: Florent WASSEN</a>
+				</div>
+				<div class="collapse navbar-collapse">
+					<ul class="nav navbar-nav navbar-right js-nav">
+						<li><a href="../../">Accueil</a></li>
+						<li class="activelink"><a>CVVEN2</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		
+		<section id="null" style="padding:25px;"></section>
+		
+		<!-- l'entreprise >-->
+		<section class="sec-about">
+			<div class="container">
+				<div class="panel-group">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" href="#context">Le contexte</a>
+						</h4>
+						</div>
+						<div id="context" class="panel-collapse collapse in">
+							<div class="panel-body">
+								Le conseil d’administration du CVVEN souhaitait un programme de gestion des colloques.<br/>
+								En dehors des périodes de vacances scolaires, le site du Jura peut accueillir des colloques, congrès, séminaires, ou des groupes. Les salles de réunions sont équipées de matériels informatiques, et de vidéoprojecteurs. L’hébergement et la restauration peuvent se faire sur place.<br/><br/>
+
+								Nous devions concevoir une application en Java liée à une base de données relationnelles.<br/>
+								Voici sont diagramme UML.<br/>
+								<img src="images/UMLCVVENJava.png"/><br/>
+								Pour la persistance, nous avons décidé d’utiliser le design pattern <b>DAO</b> (Data Access Object).<br/>
+								L’idée du DAO est de lier les données de la base de données avec les objets.<br/>
+								D’abord, il faut créer une classe par entité (table, sans les jointures).<br/>
+								Ensuite, on fait hériter les classes dérivées de la classe mère DAO (qui contient les prototypes des méthodes),<br/>
+								puis on utilise les objets de la classe métier pour implémenter les méthodes des classes dérivées.
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="panel-group">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<a data-toggle="collapse" href="#lien">Lien</a>
+							</h4>
+						</div>
+						<div id="lien" class="panel-collapse collapse in">
+							<div class="panel-body">
+								<a href="https://github.com/GautierL4/CVVEN-Java"/>Lien du dépot github</a><br/>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="panel-group">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+							<a data-toggle="collapse" href="#connection">La fenetre de connexion</a>
+							</h4>
+						</div>
+						<div id="connection" class="panel-collapse collapse in">
+							<div class="panel-body">
+								<img src="images/CVVEN JAVA - connexion.png" height="200" width="300"/><br/>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="panel-group">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<a data-toggle="collapse" href="#mainwin">La fenêtre principale et ces différents panels</a>
+							</h4>
+						</div>
+						<div id="mainwin" class="panel-collapse collapse in">
+							<div class="panel-body">
+								La fenêtre principale permet de naviguer entre les différents panels qui s'afficheront dedans.<br/>
+								Des panels existent pour créer, modifier, consulter, supprimer; les participants, événements, les participations.<br/>
+								<br/>
+							
+								La fenêtre principale avec la page d'accueil.<br/>
+								<img src="images/CVVEN JAVA - Accueil.png"/><br/><br/>
+								
+								Le panel d'insertion d'énénement.<br/>
+								<img src="images/CVVEN JAVA - creation event.png"/><br/><br/>
+
+								Le panel pour modifier les événements.<br/>
+								<img src="images/CVVEN JAVA - List Event + change date.png"/><br/><br/>
+
+								Le panel pour les retirer.<br/>
+								<img src="images/CVVEN JAVA - Suppr event.png"/><br/><br/>
+
+								Le panel des statistiques.<br/>
+								<img src="images/CVVEN JAVA - stat.png"/><br/><br/>
+								
+								Le panel d'import de fichier csv.<br/>
+								<img src="images/CVVEN JAVA - CSV.png"/><br/>
+								Ce panel permet à partir de fichier csv d'importer de nouveaux participants.
+							</div>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+		</section>
+		
+		<script src="../../js/jquery-3.5.1.min.js"></script>
+		<script src="../../js/bootstrap.min.js"></script>
+    </body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	    <title>Portfolio: Florent WASSEN</title>
+	    <meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="../../css/bootstrap.min.css">
+		<link rel="stylesheet" href="../../css/main.css">
+		<link rel="stylesheet" href="../../css/snow.css">
+    </head>
+    <body>
+		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-collapse" role="button">
+					<span class="sr-only">Toggle Navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand">Portfolio: Florent WASSEN</a>
+				</div>
+				<div class="collapse navbar-collapse">
+					<ul class="nav navbar-nav navbar-right js-nav">
+						<li><a href="../../">Accueil</a></li>
+						<li class="activelink"><a>SpiderBrain</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		
+		<section id="null" style="padding:25px;"></section>
+		
+		<!-- l'entreprise >-->
+		<section class="sec-about">
+			<div class="container">
+				<div class="panel-group">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<a data-toggle="collapse" href="#context">Le contexte</a>
+							</h4>
+						</div>
+						<div id="context" class="panel-collapse collapse in">
+							<div class="panel-body">
+								SpiderBrain est un plugin sur lequel je travaille afin de pouvoir utiliser des réseaux de neurones plutôt axé dans la neuro-évolution et plus précisément les TWEANNs (Topology and Weight Evolving Artificial Neural Networks) dans Unreal Engine 4.<br/>
+								Je me suis intéressé à l'algorithme NEAT qui est actuellement le seul algorithme disponible dans le plugin.<br/>
+								Celui-ci permet de trouver des réseaux de neurones en utilisant un algorithme génétique qui va être capable de créer des connections et des neurones ainsi que manipuler des poids au sein d'un réseau de neurones qui au départ contenait uniquement les entrées et sorties.
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="panel-group">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<a data-toggle="collapse" href="#video">Vidéo</a>
+							</h4>
+						</div>
+						<div id="video" class="panel-collapse collapse in">
+							<div class="panel-body">
+								Dans la vidéo ci-dessous on peut apercevoir des voitures devant apprendre à faire des tours de piste sur le circuit en utilisant l'algorithme NEAT.<br/>
+								Les 20 voitures sont numérotées par leur numéro d'organisme, il y a 1000 organismes qui pour chaque génération passeront 20 par 20 les évaluations.<br/>
+								Pour cela je leur passe à chaque tick en entrée leur vitesse actuelle ainsi que les distances de cinq line trace placés à l'avant du véhicule rapporté à 1.<br/>
+								En sortie j'utilise la première valeur pour l'accélération (positif pour avancer, 0 pour s'arrêter, négatif pour reculer) et une autre pour tourner (positif droite, 0 centre, négatif gauche).<br/>
+								Vu que les valeurs doivent être entre -1 et 1 j'ai utilisé comme fonction d'activation tanh. <br/>
+								Les couleurs des véhicules servent à savoir qui sont de la même espèce.<br/>
+								Les véhicules augmentent leur score lorsqu'il parcourt plus de trajet ainsi qu'en traversant des check-points dans le bon ordre.<br/>
+								Tout véhicules se déplacent en dessous de 1m/s ou percutant un mur est directement désactivé.<br/>
+								Si tous les véhicules sont désactivés ont fini l'évaluation et l'on passe à la suivante.<br/>
+								<center>
+									<iframe width="560" height="315" src="https://www.youtube.com/embed/iJxjHmjWZD8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+								</center>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="panel-group">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<a data-toggle="collapse" href="#futur">Futur</a>
+							</h4>
+						</div>
+						<div id="futur" class="panel-collapse collapse in">
+							<div class="panel-body">
+								Je compte implémenter des extensions au NEAT tel que rtNEAT ou encore la possibilité de mixé des fonctions d'activations.<br/>
+								Et peut être dans le futur l'HyperNEAT.
+							</div>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+		</section>
+		
+		<script src="../../js/jquery-3.5.1.min.js"></script>
+		<script src="../../js/bootstrap.min.js"></script>
+    </body>
+</html>

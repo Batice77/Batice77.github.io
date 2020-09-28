@@ -1,0 +1,143 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+	    <title>Portfolio: Florent WASSEN</title>
+	    <meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="../../css/bootstrap.min.css">
+		<link rel="stylesheet" href="../../css/main.css">
+		<link rel="stylesheet" href="../../css/snow.css">
+    </head>
+    <body>
+		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-collapse" role="button">
+					<span class="sr-only">Toggle Navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand">Portfolio: Florent WASSEN</a>
+				</div>
+				<div class="collapse navbar-collapse">
+					<ul class="nav navbar-nav navbar-right js-nav">
+						<li><a href="../../">Accueil</a></li>
+						<li class="activelink"><a>ColasRail</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		
+		<section id="null" style="padding:25px;"></section>
+		
+		<!-- l'entreprise >-->
+		<section class="sec-about">
+			<div class="container">
+				
+				<div class="panel-group">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+						  <h4 class="panel-title">
+							<a data-toggle="collapse" href="#context">Contexte</a>
+						  </h4>
+						</div>
+						<div id="context" class="panel-collapse collapse in">
+							<div class="panel-body">
+								J'ai travaillé chez Colas Rail dans le bureau d'études pour valider ma licence, c'est une entreprise dans le ferroviaire.<br/>
+								
+								Dans le cadre de la transformation numérique je participe à la création d’un nouveau projet numérique.<br/>
+								A ce jour, il n’existe pas de service développement numérique 3D pour les formations au sein de l’entreprise, à ce titre je suis donc seul sur ce projet.<br/>
+								
+								L’objectif de ce stage est d’avoir un simulateur employable par six stagiaires, transportable et qui sera facilement exploitable par les formateurs et devra pouvoir être opérationnel sur un seul écran sans équipement externe de type joysticks ou boutons et devra comporter au moins un scénario (dû au manque de temps).
+								Il existe deux types de personnes dans le simulateur, les conducteurs et les instructeurs.
+								Les instructeurs doivent pouvoir lancer des scénarios pré enregistrés sur un ou des conducteurs de leur choix.
+								Les conducteurs doivent être aux commandes d’une cabine de train individuelle, chacun d’eux se retrouve seul sur le circuit.
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="panel-group">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+						  <h4 class="panel-title">
+							<a data-toggle="collapse" href="#projet">Projet</a>
+						  </h4>
+						</div>
+						<div id="projet" class="panel-collapse collapse in">
+							<div class="panel-body">
+								Pour cela, j’ai utilisé Unreal Engine 4 dont j’ai l’habitude de me servir personnellement ainsi que Blender pour la 3D et Gimp pour la 2D.<br/>
+								Pour la possibilité de jouer en réseau, j’ai utilisé le système de réseau par défaut d’Unreal Engine 4.<br/>
+								J’ai créé un menu principal où l’on peut renseigner son nom, héberger une partie ou la rejoindre.<br/>
+								Un menu en jeux pour choisir entre instructeur et conducteur.<br/>
+								<br/>
+								J’ai créé un Acteur Rails que l’on peut placer dans le niveau et qui contient une courbe en 3D que l’on peut modifier et qui déclenche une génération du visuel comprenant les rails (que j’ai dû modéliser) qui se courbe en fonction de la courbe, des traverses (qui sont des cubes déformés), des poteaux caténaires (transmis par Monsieur Erik GARDON) dont on peut régler si on les veut à gauche ou non, ou à droite ou non.<br/>
+								Il existe aussi les rails d’aiguillage qui changent de courbe selon son état.<br/>
+								On peut sélectionner les rails d’avant et d’après afin de pouvoir passer de l’un à l’autre.<br/>
+								Chaque changement sur la courbe entraine une nouvelle génération du visuel des rails qui bloque le programme pendant la durée de celle-ci.<br/>
+								Pour gérer les déplacements de la locomotive j’ai créé un composant pour les mouvements qui prend une courbe et ajoute une distance parcourue selon sa vitesse et le place visuellement.<br/> 
+								Pour répliquer ses mouvements j’ai créé un Timer qui à intervalles réguliers met à jour son positionnement chez les autres utilisateurs.<br/>
+								La courbe sur laquelle le train est placé est générée à partir de toutes les courbes contenues dans chaque portion de rails.<br/>
+								Ce qui permet d’avoir une distance exacte à tout moment sur le circuit.<br/>
+								Et un changement d’état sur l’aiguillage recalcule la courbe et replace le train à la même distance sur la courbe renouvelée.<br/>
+								<br/>
+								J’ai dû réaliser un niveau comprenant un circuit à double voies en BAL (block automatique lumineux) à partir d’un plan que l’on m’a fourni détaillant un circuit de 16km, la signalisation le long des voies par km ainsi que les décors à franchir (ponts, tunnels, gares).<br/>
+								<br/>
+								L’objectif de ce stage est d’avoir un simulateur employable par 6 stagiaires, transportable et qui sera facilement exploitable par les formateurs et devra pouvoir être opérationnel sur un seul écran sans équipement externe de type joysticks ou boutons et devra comporter au moins un scénario (dû au manque de temps).<br/>
+								Il existe deux types de personnes dans le simulateur, les conducteurs et les instructeurs.<br/>
+								Les instructeurs doivent pouvoir lancer des scénarios préenregistrés sur un ou des conducteurs de leur choix.<br/>
+								Les conducteurs doivent être aux commandes d’une cabine de train individuelle, chacun d’eux se retrouve seul sur le circuit.<br/>
+								Pour cela, j’ai utilisé Unreal Engine 4 dont j’ai l’habitude de me servir personnellement ainsi que Blender pour la 3D et Gimp pour la 2D.<br/>
+								Pour la possibilité de jouer en réseau, j’ai utilisé le system de réseau par défaut d’Unreal Engine 4.<br/>
+								J’ai créé un menu principal où l’on peut renseigner son nom, héberger une partie ou la rejoindre.<br/>
+								Un menu en jeux pour choisir entre instructeur et conducteur.<br/>
+								<br/>
+								J’ai créé un Acteur Rails que l’on peut placer dans le niveau et qui contient une courbe en 3D que l’on peut modifier et qui déclenche une génération du visuel comprenant les rails (que j’ai dû modéliser) qui se courbe en fonction de la courbe, des traverses (qui sont des cubes déformés), des poteaux caténaires (transmis par Monsieur Erik GARDON) dont on peut régler si on les veut à gauche ou non, ou à droite ou non.<br/>
+								Il existe aussi les rails d’aiguillage qui changent de courbe selon son état.<br/>
+								On peut sélectionner les rails d’avant et d’après afin de pouvoir passer de l’un à l’autre.<br/>
+								Chaque changement sur la courbe entraine une nouvelle génération du visuel des rails qui bloque le programme pendant la durée de celle-ci.<br/>
+								Pour gérer les déplacements de la locomotive j’ai créé un composant pour les mouvements qui prend une courbe et ajoute une distance parcourue selon sa vitesse et le place visuellement.<br/>
+								Pour répliquer ses mouvements j’ai créé un Timer qui à intervalles réguliers met à jour son positionnement chez les autres utilisateurs.<br/>
+								La courbe sur laquelle le train est placé est générée à partir de toutes les courbes contenues dans chaque portion de rails.<br/>
+								Ce qui permet d’avoir une distance exacte à tout moment sur le circuit.<br/>
+								Et un changement d’état sur l’aiguillage recalcule la courbe et replace le train à la même distance sur la courbe renouvelée.<br/>
+								<br/>
+								J’ai dû réaliser un niveau comprenant un circuit à double voies en BAL (block automatique lumineux) à partir d’un plan que l’on m’a fourni détaillant un circuit de 16km, la signalisation le long des voies par km ainsi que les décors à franchir (ponts, tunnels, gares).<br/>
+								Monsieur Erik GARDON m’a transmis tous les panneaux et décors en 3D avec dans leur nom leur point kilométrique.<br/>
+								Pour les placer, j’ai créé un « Acteur » pouvant prendre un objet à placer à la distance indiquée, le déplaçant ainsi au bon endroit, il peut aussi indiquer la distance à laquelle il se trouve.<br/>
+								<br/>
+								Je suis allé à Colas Rail de Lyon pour voir différentes locomotives de fret et essayer le simulateur existant pour voir ses fonctionnalités ainsi que celles des trains.<br/>
+								<br/>
+								J’ai modélisé la cabine du train et son intérieur avec des cadrans, leviers, boutons
+								<br/>
+								Une image de décors ci-dessous:<br/>
+								<img src="images/decor.png"/><br/>
+								Les conducteurs n’ayant pas forcément d’expérience, ou étant peu à l’aise avec un ordinateur, ils préfèrent une utilisation de la souris plutôt que du clavier.<br/>
+								La souris est affichée à l’écran et on peut « Cliquer » sur les boutons ainsi que sur les interrupteurs.<br/>
+								Pour les leviers, on le sélectionne par un clic, le socle se met en surbrillance, puis l’utilisateur peut déplacer le levier grâce à la molette.<br/>
+								Pour le levier de traction, le programme vérifie s’il est proche de « 0 » pour le remettre à cette valeur automatiquement. Cela permet d’être sûr que la traction soit à « 0 » ainsi que de demander un plus grand mouvement de molette pour s’en éloigner. Ce qui peut s’apparenter à la résistance du levier lorsqu’il est à cette position dans un vrai train.<br/>
+								J’ai créé des matériaux lumineux, clignotants et les motifs de boutons pour réaliser les instruments de la cabine.<br/>
+								<br/>
+								Lors d’une partie, l’instructeur voit un menu divisé par le nombre de conducteurs dans lequel on peut voir leur nom, leur distance actuelle, le scénario en cours et quand on clique dessus la vue du conducteur dans la partie en cours s’affiche (voir l’image ci-dessous).<br/>
+								Exemple avec 4 conducteurs:<br/>
+								<img src="images/instructeur.png"/><br/>
+								En bas à gauche on peut sélectionner un scénario, à sa droite on peut sélectionner les conducteurs qui recevront le scénario et en appuyant sur le bouton « Envoyer Scénario » cela leur lance le scénario sélectionné.<br/>
+								Lors d’un scénario les actions des conducteurs sont enregistrés sous leur nom et daté en indiquant s’ils ont réussi certaine action attendue ou non dans des fichiers textes sur les ordinateurs des instructeurs.<br/>
+								<br/>
+								Tous les vendredis, j’avais une réunion avec Monsieur Erik GARDON et le client ASP où l’on montrait, discutait de l’avancement du projet et des futurs ajouts.<br/>
+								A chaque avancée du programme, lors de l’ajout d’une fonctionnalité, je la testais en jeu avec un conducteur et un instructeur (virtuels).<br/>
+								Pour les sauvegardes, j’ai créé un fichier bat qui me permet de faire des backups en compressant les fichiers et en excluant les sauvegardes et binaires qui ne servent à rien pour la sauvegarde et le zip à pour destination le OneDrive de Colas. Je le lançais une fois par jour le soir.<br/>
+								J’ai privilégié le fait d’avoir des fonctionnalités visuelles pour avoir plus rapidement des retours de mes clients qui dans certains cas ont dû être refaites ou modifiées.
+							</div>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+		</section>
+		
+		<script src="../../js/jquery-3.5.1.min.js"></script>
+		<script src="../../js/bootstrap.min.js"></script>
+    </body>
+</html>

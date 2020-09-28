@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	    <title>Portfolio: Florent WASSEN</title>
+	    <meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="../../css/bootstrap.min.css">
+		<link rel="stylesheet" href="../../css/main.css">
+		<link rel="stylesheet" href="../../css/snow.css">
+    </head>
+    <body>
+		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-collapse" role="button">
+					<span class="sr-only">Toggle Navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand">Portfolio: Florent WASSEN</a>
+				</div>
+				<div class="collapse navbar-collapse">
+					<ul class="nav navbar-nav navbar-right js-nav">
+						<li><a href="../../">Accueil</a></li>
+						<li class="activelink"><a>PlanetBiosphereSimulator</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		
+		<section id="null" style="padding:25px;"></section>
+		
+		<!-- l'entreprise >-->
+		<section class="sec-about">
+			<div class="container">
+				<div class="panel-group">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<a data-toggle="collapse" href="#context">Le contexte</a>
+							</h4>
+						</div>
+						<div id="context" class="panel-collapse collapse in">
+							<div class="panel-body">
+								Projet annuel réalisé à quatre.<br/>
+								Pouvoir simuler des écosystèmes paramétrables en créant des planètes paramétrables.<br/>
+								Je me suis occupé de toute la partie planète.<br/>
+								Un autre la végétation.<br/>
+								Et les deux autres des créatures peuplant la planète.<br/>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="panel-group">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<a data-toggle="collapse" href="#planet">Planète</a>
+							</h4>
+						</div>
+						<div id="planet" class="panel-collapse collapse in">
+							<div class="panel-body">
+								La planète est créée en forme de cube.<br/>
+								<img src="images/cube.png"/><br/>
+								On peut ensuite subdiviser les faces en grille avec des élévations sur les vertices a une distance fixe du centre de la planète.<br/>
+								<img src="images/sphere.png"/><br/>
+								Chaque face peut être utilisée comme un quadtree afin d'implémenter différents niveau de détail.<br/>
+								<img src="images/lod.png"/><br/>
+								On peut faire du culling afin de ne pas voir les zones éloignées de la caméra<br/>
+								<img src="images/culling.png"/><br/>
+								Divers modules ont été crée en utilisant la librairie FastNoise en C# afin de pouvoir crée le générateur de noise qui sera utilisé pour la planète.<br/>
+								Utilisation d'une fractale noise pour les élévations<br/>
+								<img src="images/fractalnoise.png"/><br/>
+								Module select (mélange des noises) + const (permet d'avoir une zone lisse de même élévation)<br/>
+								<img src="images/selectconst.png"/><br/>
+								Ajout du vertex shader pour colorer la planète<br/>
+								<img src="images/vertexshader.png"/><br/>
+								On peut récrire la fonction pour quel utilise un gradient color à partir d'une valeur basée sur l'élévation<br/>
+								<img src="images/color.png"/><br/>
+								J'ai configurés l'algorithme génétique pour trouver des planètes qui ont des zones de montagne ainsi que des plaines en même quantité<br/>
+								J'ai ajouté une sphère d'eau.<br/>
+								<img src="images/water.png"/><br/>
+								<img src="images/watershader.png"/><br/>
+								<img src="images/another.png"/><br/>
+								La végétation apparait une fois la planète trouver par l'algorithme génétique puis à la fin de celle-ci les créatures apparaîtront.<br/>
+								<img src="images/final with forest.png"/><br/>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="panel-group">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<a data-toggle="collapse" href="#noise">NoiseScript</a>
+							</h4>
+						</div>
+						<div id="noise" class="panel-collapse collapse in">
+							<div class="panel-body">
+								Vous pouvez créer une classe qui hérite de PBSNoiseScript qui permet de réécrire la fonction qui doit retourner le générateur de noise pour l'élévation.<br/>
+								Les générateurs peuvent être créées en combinent divers modules créés avec FastNoise.<br/>
+								On peut aussi récrire la fonction qui retourne la couleur pour un point donné.
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="panel-group">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<a data-toggle="collapse" href="#genetique">Algorithme Génétique</a>
+							</h4>
+						</div>
+						<div id="genetique" class="panel-collapse collapse in">
+							<div class="panel-body">
+								Le script GeneticNoise va utiliser l'algorithme génétique sur la planète et peut-être configuré via un fichier LUA.<br/>
+								En LUA on peut changer la valeur populationSize pour changer le nombre d'individu par génération.<br/>
+								La fonction getScore doit retourner le score de la planète actuelle.<br/>
+								Pour cela on peut utiliser la fonction getPoints pour récupérer un certain nombre de points disperser uniformément autour de la planète dont le nombre de subdivision peut être réglé.<br/>
+								On peut ensuite utiliser la fonction pour obtenir l'élévation à un point donné.<br/>
+								La fonction isEndCriteria qu'en t'à elle permet d'arrêter l'algorithme par exemple à partir d'un score assez grand ou même une stagnation du score ou combiner les 2.<br/>
+								L'algorithme génétique va modifier les variables du noise script attaché à la planète mais pas n'importe comment.<br/>
+								Il va seulement toucher au nombre avec des attributs min et max ainsi que n'importe quelle énumération grâce au système de réflexion du C#.
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="panel-group">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<a data-toggle="collapse" href="#lien">Lien</a>
+							</h4>
+						</div>
+						<div id="lien" class="panel-collapse collapse in">
+							<div class="panel-body">
+								<a href="https://github.com/AnthoC97/Planete-Biosphere-Simulator">Source Code</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="panel-group">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<a data-toggle="collapse" href="#video">Vidéo</a>
+							</h4>
+						</div>
+						<div id="video" class="panel-collapse collapse in">
+							<div class="panel-body">
+								<center>
+									Éditer une planète via l'éditeur:
+									<iframe src="https://drive.google.com/file/d/1Sc9ydsWLaGemYZk-qDRXBo-E2Ss4WXjN/preview" width="960" height="540"></iframe><br/>
+									Planète avec l'algorithme génétique et LUA:
+									<iframe src="https://drive.google.com/file/d/1EjAQr2G35QB7-Rzdb2E6qJkzFHxAmdHf/preview" width="960" height="540"></iframe>
+								</center>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+		</section>
+		
+		<script src="../../js/jquery-3.5.1.min.js"></script>
+		<script src="../../js/bootstrap.min.js"></script>
+    </body>
+</html>

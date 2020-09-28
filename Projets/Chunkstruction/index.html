@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	    <title>Portfolio: Florent WASSEN</title>
+	    <meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="../../css/bootstrap.min.css">
+		<link rel="stylesheet" href="../../css/main.css">
+		<link rel="stylesheet" href="../../css/snow.css">
+    </head>
+    <body>
+		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-collapse" role="button">
+					<span class="sr-only">Toggle Navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand">Portfolio: Florent WASSEN</a>
+				</div>
+				<div class="collapse navbar-collapse">
+					<ul class="nav navbar-nav navbar-right js-nav">
+						<li><a href="../../">Accueil</a></li>
+						<li class="activelink"><a>Chunkstruction</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		
+		<section id="null" style="padding:25px;"></section>
+		
+		<!-- l'entreprise >-->
+		<section class="sec-about">
+			<div class="container">
+				<div class="panel-group">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<a data-toggle="collapse" href="#context">Le contexte</a>
+							</h4>
+						</div>
+						<div id="context" class="panel-collapse collapse in">
+							<div class="panel-body">
+								J'ai réalisé ce projet qui devait faire partie d'un jeu que je souhaitais concevoir.<br/>
+								Ce projet devait être capable de gérer la construction d'énormes vaisseaux à base de blocs.</br>
+								Ce vaisseau devait ensuite pouvoir se déplacer avec la physique (mais ici les constructions sont solides et statiques).
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="panel-group">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<a data-toggle="collapse" href="#lien">Lien</a>
+							</h4>
+						</div>
+						<div id="lien" class="panel-collapse collapse in">
+							<div class="panel-body">
+								<a href="https://github.com/Batice77/Chunkstruction">Code Source</a><br/>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="panel-group">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<a data-toggle="collapse" href="#diagramme">Diagramme Incomplet</a>
+							</h4>
+						</div>
+						<div id="diagramme" class="panel-collapse collapse in">
+							<div class="panel-body">
+								<img src="images/Chunk System.png" height="400" width="780"/><br/>
+								On a une structure qui est composées de Chunks.<br/>
+								Les chunks contiennent des tableaux tridimensionnels de structures de blocks.<br/>
+								La structure block contient elle des variables d'un octet pour minimiser l'espace qu'ils prennent<br/>
+								ainsi que des fonctions qui vont appeler une fonction du même nom d'un objet stocké dans une liste qui représente le type de block qui est déterminé par l'un des octets.<br/>
+								On a donc une liste d'objet block qui contient une seul instance de chaque type de block.<br/>
+								ces objets ont des fonctions permetant la génération des différentes faces qui seront générées selon leurs obstructions.
+							</div>
+						</div>
+					</div>
+				</div>
+								
+				<div class="panel-group">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+								<a data-toggle="collapse" href="#interaction">Interaction</a>
+							</h4>
+						</div>
+						<div id="interaction" class="panel-collapse collapse in">
+							<div class="panel-body">
+								<img src="images/escalier.png" height="200" width="300"/><br/>
+								On peut y voir ici un escalier fait de cubes et de demi-cubes utilisant le même matériaux.<br/>
+								Le tracé de cube vert indique l'endroit où le block sera posé et rouge celui qui sera retiré.
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="panel-group">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+							<a data-toggle="collapse" href="#speed">Vitesse de Génération</a>
+							</h4>
+						</div>
+						<div id="speed" class="panel-collapse collapse in">
+							<div class="panel-body">
+								Ci-dessous une image d'une structure composer de 128*128*128 blocks, soit 2097152 blocks.<br/>
+								<img src="images/Structure 128x128x128.png" height="400" width="450"/><br/>
+								Générer par des boucles, la génération a pris 1 sec sur mon pc.<br/>
+								<img src="images/for 128.png" height="200" width="300"/><br/><br/>
+								
+								Utilisation de calcul bit à bit:<br/>
+								bit shifting pour savoir dans quel chunk un block se trouve.<br/>
+								int log = (int)FMath::Sqrt(UChunkComponent::nbBlockPerAxis); // 5 for 32*32*32 chunk<br/>
+								pos.X = x >> log;<br/>
+								pos.Y = y >> log;<br/>
+								pos.Z = z >> log;<br/>
+								<br/>
+								ET bit à bit pour savoir quelle est la position d'un block par rapport à celle de son chunk.<br/>
+								x &= (UChunkComponent::nbBlockPerAxis - 1);<br/>
+								y &= (UChunkComponent::nbBlockPerAxis - 1);<br/>
+								z &= (UChunkComponent::nbBlockPerAxis - 1);<br/>
+								<br/>
+								Les données géométriques se font remplir dans des boucles, mais pour chaque chunk dans un thread différent.(MultiThreading)<br/>
+								<img src="images/UpdateChunk.jpg" height="300" width="600"/>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+		</section>
+		
+		<script src="../../js/jquery-3.5.1.min.js"></script>
+		<script src="../../js/bootstrap.min.js"></script>
+    </body>
+</html>

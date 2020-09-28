@@ -1,0 +1,206 @@
+@import url(entypo.css);
+
+/* entypo */
+[class*="entypo-"]:before {
+  font-family: 'entypo', sans-serif;
+}
+
+body {
+	font-family: 'Open sans', sans-serif;
+	font-size: 16px;
+	font-weight: 300;
+	background: #D1D1D1;
+}
+
+.navbar a,
+.sec-about p {text-align: center; }
+.navbar a {font-size: 16px;}
+.main-heading {
+  font-family: 'Open sans', sans-serif;
+  font-weight: 300;
+  text-align: center;
+  letter-spacing: 9px;
+  text-transform: uppercase;
+}
+.container > h1 {
+  font-weight: 300;
+  text-align: center;
+  text-transform: uppercase;
+}
+p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+.sec-about a {text-decoration: underline;}
+
+/*=Base=*/
+section {padding: 1em 0;}
+footer {padding: 3em 0;}
+form {
+  @media screen and (max-width: 768px) and (min-width: 485px) {max-width: 70%;}
+}
+ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+a {@extend %transition;}
+hr {
+	margin-bottom: 3em;
+	width: 9%;
+}
+
+.sec-folio .row {margin-bottom: 3em;}
+
+/*Header*/
+.navbar-default {
+background: rgb(69,72,77); /* Old browsers */
+background: -moz-linear-gradient(top, rgba(69,72,77,1) 0%, rgba(0,0,0,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, rgba(69,72,77,1) 0%,rgba(0,0,0,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, rgba(69,72,77,1) 0%,rgba(0,0,0,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', endColorstr='#000000',GradientType=0 );
+  border-color: #34cdf9;
+  -moz-box-shadow: 0px 0px 10px 2px #34cdf9;
+-webkit-box-shadow: 0px 0px 10px 2px #34cdf9;
+-o-box-shadow: 0px 0px 10px 2px #34cdf9;
+box-shadow: 0px 0px 10px 2px #34cdf9;
+filter:progid:DXImageTransform.Microsoft.Shadow(color=#34cdf9, Direction=NaN, Strength=10);
+}
+.navbar-default .navbar-nav>li>a {
+	color:silver;
+} 
+.navbar-default .navbar-nav>li>a:hover {#color: #318CE7;color:#34cdf9; cursor: pointer;}
+.navbar-default .navbar-brand {
+	font-weight: bold;
+	color:#7EECFF;
+	text-shadow: 0 0 5px #666, 0 0 10px #666, 0 0 15px #666, 0 0 20px #34cdf9, 0 0 35px #34cdf9;
+}
+.navbar-default .navbar-brand:hover {
+	font-weight: bold;
+	color:#BEFFFF;
+	text-shadow: 0 0 5px #999, 0 0 10px #999 0 15px #999, 0 0 20px #34cdfb, 0 0 35px #34cdfb;
+}
+
+/*Main*/
+.sec-main {
+	#margin-top: 50px;
+	padding: 0;
+	height: 300px;
+	display: flex;
+	background: no-repeat url("../images/building-madcart.jpg") center center;
+	background-size: cover;
+}
+.main-heading {
+	color: #fff;
+	margin: auto;
+}
+
+/*About*/
+.sec-about a {
+  color: #000;
+}
+.sec-about a:hover  {
+	color: #2abeea;
+}
+
+.main-heading {
+  font-size: 1.5em;
+  font-family: Iceland;
+  color: #ffffff;
+  text-shadow: 0 0 5px black, 0 0 10px black, 0 0 15px black;
+}
+a:link {
+   outline: 0;
+}
+
+.navbar-default .navbar-nav>li.activelink >a  {background-color: #ebebeb; color: #348CE7; text-decoration:underline;}
+
+.sec-folio {
+	background: rgb(170,170,170);
+}
+
+/* Post = case du portfolio */
+.post {
+	width:100%;
+	height: 300px;
+	background: grey;
+	position:relative;
+	margin-bottom:30px;
+}
+.post-in {
+	background-color:rgba(0,0,0,0.8);
+	padding:5px;
+	position:absolute;
+	bottom:0;
+	left:0;
+	right:0;
+}
+.post-in h4 {
+	text-align: center;
+	color: white;
+	text-transform: uppercase;
+	font-weight: bold;
+	margin:0;
+}
+.post-in p {
+	text-align:center;
+	color:silver;
+	font-weight: italic;
+	margin:0;
+}
+.post a {
+	z-index: 1000;
+	text-indent: 200%;
+	white-space: nowrap;
+	font-size: 0;
+	opacity: 0;
+	position:absolute;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+}
+.post img {
+	position:absolute;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+	z-index: 0;
+	object-fit: cover;
+	width:100%;
+	height:100%;
+}
+
+/*	footer	*/
+footer { background: #000; padding:0;}
+#footer p {
+	text-align: center;
+}
+.footer-link-ul {
+	display: flex;
+	justify-content: center;
+	padding:10px;
+}
+.footer-link-ul li:not(:first-child) a {margin-left: 1em;}
+.footer-link-ul a {
+  padding: 0.35em 0.35em;
+  width: 1.85em;
+  color: #999;
+  font-size:30px;
+}
+.footer-link-ul a:hover {
+	color: #34cdf9;
+}
+
+.panel-title a {
+	font-style: italic;
+	color: #0066ff;
+}
+
+#projet .panel-body img {
+	max-height:100%;
+	max-width:100%;
+	width: auto;
+	height: auto;
+}
