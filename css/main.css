@@ -1,9 +1,4 @@
-@import url(entypo.css);
-
-/* entypo */
-[class*="entypo-"]:before {
-  font-family: 'entypo', sans-serif;
-}
+@import url(bootstrap-icons.min.css);
 
 body {
 	font-family: 'Open sans', sans-serif;
@@ -54,17 +49,7 @@ hr {
 
 /*Header*/
 .navbar-default {
-background: rgb(69,72,77); /* Old browsers */
-background: -moz-linear-gradient(top, rgba(69,72,77,1) 0%, rgba(0,0,0,1) 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(top, rgba(69,72,77,1) 0%,rgba(0,0,0,1) 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to bottom, rgba(69,72,77,1) 0%,rgba(0,0,0,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', endColorstr='#000000',GradientType=0 );
-  border-color: #34cdf9;
-  -moz-box-shadow: 0px 0px 10px 2px #34cdf9;
--webkit-box-shadow: 0px 0px 10px 2px #34cdf9;
--o-box-shadow: 0px 0px 10px 2px #34cdf9;
-box-shadow: 0px 0px 10px 2px #34cdf9;
-filter:progid:DXImageTransform.Microsoft.Shadow(color=#34cdf9, Direction=NaN, Strength=10);
+background: rgb(50,50,58);
 }
 .navbar-default .navbar-nav>li>a {
 	color:silver;
@@ -73,22 +58,18 @@ filter:progid:DXImageTransform.Microsoft.Shadow(color=#34cdf9, Direction=NaN, St
 .navbar-default .navbar-brand {
 	font-weight: bold;
 	color:#7EECFF;
-	text-shadow: 0 0 5px #666, 0 0 10px #666, 0 0 15px #666, 0 0 20px #34cdf9, 0 0 35px #34cdf9;
 }
 .navbar-default .navbar-brand:hover {
 	font-weight: bold;
 	color:#BEFFFF;
-	text-shadow: 0 0 5px #999, 0 0 10px #999 0 15px #999, 0 0 20px #34cdfb, 0 0 35px #34cdfb;
 }
 
 /*Main*/
 .sec-main {
-	#margin-top: 50px;
 	padding: 0;
-	height: 300px;
+	height: 250px;
 	display: flex;
-	background: no-repeat url("../images/building-madcart.jpg") center center;
-	background-size: cover;
+	background: #2f798e;
 }
 .main-heading {
 	color: #fff;
@@ -116,7 +97,7 @@ a:link {
 .navbar-default .navbar-nav>li.activelink >a  {background-color: #ebebeb; color: #348CE7; text-decoration:underline;}
 
 .sec-folio {
-	background: rgb(170,170,170);
+	background: rgb(200,200,212);
 }
 
 /* Post = case du portfolio */
